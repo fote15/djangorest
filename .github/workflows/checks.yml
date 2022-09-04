@@ -1,4 +1,4 @@
-===
+---
 name: Checks
 
 on: [push]
@@ -13,7 +13,7 @@ jobs:
         with:
           username: ${{ secrets.DJANGOREST }}
           password: ${{ secrets.DJANGOREST_TOKEN }}
-      - name: Checkouts
+      - name: Checkout
         uses: actions/checkout@v2
       - name: Test
         run: docker-compose run --rm app sh -c "python manage.py test"
